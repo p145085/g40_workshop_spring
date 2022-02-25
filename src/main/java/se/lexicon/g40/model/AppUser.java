@@ -1,17 +1,10 @@
-package se.lexicon.g40;
-
-import org.hibernate.annotations.GenericGenerator;
+package se.lexicon.g40.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.UUID;
-
-import static se.lexicon.g40.EntityConstants.GENERATOR;
-import static se.lexicon.g40.EntityConstants.UUID_GENERATOR;
 
 @Entity
 public class AppUser {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false)
@@ -19,12 +12,21 @@ public class AppUser {
 
     @Column(unique = true)
     private String username;
+
     private String password;
     private LocalDate regDate;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_details_id")
     private Details userDetails;
+
+    public AppUser(int appUserID, String username, String password, LocalDate regDate, Details userDetails) {
+        this.appUserID = appUserID;
+        this.username = username;
+        this.password = password;
+        this.regDate = regDate;
+        this.userDetails = userDetails;
+    }
 
     public AppUser() {
     }

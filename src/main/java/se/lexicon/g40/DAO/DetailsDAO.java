@@ -1,4 +1,6 @@
-package se.lexicon.g40;
+package se.lexicon.g40.DAO;
+
+import se.lexicon.g40.model.Details;
 
 import java.util.Collection;
 

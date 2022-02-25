@@ -1,13 +1,8 @@
-package se.lexicon.g40;
-
-import org.hibernate.annotations.GenericGenerator;
+package se.lexicon.g40.model;
 
 import javax.persistence.*;
 
 import java.util.Set;
-
-import static se.lexicon.g40.EntityConstants.GENERATOR;
-import static se.lexicon.g40.EntityConstants.UUID_GENERATOR;
 
 @Entity
 public class Book {

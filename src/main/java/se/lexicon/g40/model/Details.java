@@ -1,4 +1,4 @@
-package se.lexicon.g40;
+package se.lexicon.g40.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -21,6 +21,13 @@ public class Details {
     private String name;
 
     private LocalDate birthDate;
+
+    public Details(int detailsID, String email, String name, LocalDate birthDate) {
+        this.detailsID = detailsID;
+        this.email = email;
+        this.name = name;
+        this.birthDate = birthDate;
+    }
 
     public Details() {
     }
